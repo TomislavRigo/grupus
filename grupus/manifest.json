@@ -1,0 +1,11 @@
+{
+  "manifest_version": 2,
+  "name": "Grupus",
+  "version": "0.1",
+
+  "description": "Browser addon for restoring and configuring tab groups.",
+  "homepage_url": "github.com/TomislavRigo/grupus",
+  "icons": {
+    "96": "icons/grupus-96.png"
+  },
+}

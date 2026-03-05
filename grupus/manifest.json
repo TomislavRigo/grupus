@@ -4,8 +4,14 @@
   "version": "0.1",
 
   "description": "Browser addon for restoring and configuring tab groups.",
-  "homepage_url": "github.com/TomislavRigo/grupus",
+  "homepage_url": "https://github.com/TomislavRigo/grupus",
   "icons": {
     "96": "icons/grupus-96.png"
   },
+  "browser_action": {
+    "default_icon": "icons/grupus-96.png",
+    "default_title": "Grupus",
+    "default_popup": "popup/grupus.html"
+  },
+  "permissions": ["storage", "tabs", "tabGroups"]
 }

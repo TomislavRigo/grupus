@@ -13,5 +13,13 @@
     "default_title": "Grupus",
     "default_popup": "popup/grupus.html"
   },
-  "permissions": ["storage", "tabs", "tabGroups"]
+  "permissions": ["storage", "tabs", "tabGroups"],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "grupus@github.tomislavrigo",
+      "data_collection_permissions": {
+        "required": ["none"]
+      }
+    }
+  }
 }

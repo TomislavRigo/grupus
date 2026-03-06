@@ -13,7 +13,8 @@ const DATA_KEY = "grupus_data";
 */
 function normalizeUrl(raw) {
   try {
-    return new URL(raw).toString();
+    const url = new URL(raw).toString();
+    return url
   } catch {
     return new URL(`https://${raw}`).toString();
   }
@@ -55,7 +56,7 @@ function createTab(groupId, tabId, config) {
   urlInput.dataset.key = `${groupId}:${tabId}`
   urlInput.addEventListener("change", async (event) => {
     const index = event.target.dataset.key.split(":")
-    config[index[0]].tabs[index[1]] = event.target.value
+    config[index[0]].tabs[index[1]] = normalizeUrl(event.target.value)
     await setConfig(config)
     await render()
   })
@@ -94,7 +95,7 @@ function createTabs(groupId, config) {
   addInput.type = "text"
   addInput.value = ""
   addInput.addEventListener("change", async (event) => {
-    config[groupId].tabs = [...config[groupId].tabs, event.target.value]
+    config[groupId].tabs = [...config[groupId].tabs, normalizeUrl(event.target.value)]
     await setConfig(config)
     await render()
   })
